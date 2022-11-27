@@ -40,14 +40,11 @@ public class CollisionHandler : MonoBehaviour
         if (isTransitioning || !checkCollision) { return; }
         switch (other.gameObject.tag)
         {
+            case "Fuel":
             case "Friendly":
-                Debug.Log("This thing is friendly");
                 break;
             case "Finish":
                 StartFinishedSequence();
-                break;
-            case "Fuel":
-                Debug.Log("You picked up fuel");
                 break;
             default:
                 StartCrashSequence();
